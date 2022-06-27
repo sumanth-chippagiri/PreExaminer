@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+*
+{
+    margin:0;
+    padding:0;
+}
+body 
+{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#banner
+{
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-position: center;
+}
+.content
+{
+    width:100%;
+    position:absolute;
+    top:60%;
+    transform:translateY(-50%);
+    text-align: center;
+    color:royalblue;
+}
+
+.title
+{
+    font-size:70px;
+    font-weight:bold;
+    line-height:100px;
+    height:100px;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+}
+.slider
+{
+    /*background-color:rgb(252, 250, 145);*/
+    margin-left:12px;
+    box-sizing: border-box;
+    animation: slider 5s linear infinite
+}
+.slider #black
+{
+    color:black;
+}
+.slider #red
+{
+    color:red;
+}
+.slider #green
+{
+    color:green
+}
+@keyframes slider {
+
+    0%{margin-top: -200px;}
+    30%{ margin-top: -200px;}
+    35%{ margin-top: 0px;}
+    65%{ margin-top: 0px;}
+    75%{margin-top: 200px;}
+    100%{ margin-top: 200px;}
+}
+.button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 50px;
+  }
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

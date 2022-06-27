@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreExaminer</title>
+    <link rel="stylesheet" href="{% static 'meetings/styles/style.css'%}">
+</head>
+<body>
+<div id="banner">
+        <div class="content">
+            <div class="title">
+                Online Meetings are now
+                <div class="slider">
+                    <div id="black">EASIER.</div>
+                    <div id="green">SAFER.</div>
+                    <div id="red">BETTER.</div>
+                </div> 
+            </div>
+            <div>
+                <a href="{% url 'verifycard' %}"><button class="button"><span>Get Started!</span></button></a>
+            </div>
+        </div>
+    </div>
+ </body>
+</html>

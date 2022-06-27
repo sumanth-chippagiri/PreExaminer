@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>preExaminer</title>
+</head>
+<body>
+    {%block content %}
+    
+    <h1 style="color:royalblue;">Details of the attendees </h1>
+    <table class="table" style="border:3px solid;text-align: center;margin-left:10px;">
+        <caption>List of attendees</caption>
+        <thead>
+          <tr>
+            <th scope="col">Sno</th>
+            <th scope="col">Roll number</th>
+            <th scope="col">Name</th>
+            <th scope="col">Branch</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for attendee in attendee_list %}
+                <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{attendee.rollno}}</td>
+                <td>{{attendee.name}}</td>
+                <td>{{attendee.branch}}</td>
+                </tr>   
+           <!--<li><span>{{attendee.rollno}}</span>&nbsp;&nbsp;<span>{{attendee.name}}</span>&nbsp;&nbsp;<span>{{attendee.branch}}</span></li>-->
+        {% endfor %}
+    </tbody>
+    </table>
+    <div class="container" style="display: flex;  
+    justify-content: center;  
+    align-items: center; ">
+    <a href="{% url 'attendee_csv' %}" style="text-decoration: none;"><button style="cursor:pointer; background:rgb(71, 68, 68); padding:15px; color:white; border:1px solid;border-radius:15px;display:flex;justify-content:center;align-items: center;">Download Excel</button></a>
+    </div>
+    <div class="container" style="display: flex;  
+    justify-content: center;  
+    align-items: center; ">
+    <a href="{% url 'landingpage' %}" style="text-decoration: none;"><button style="cursor:pointer; background:rgb(71, 68, 68);margin-top:10px; padding:15px; color:white; border:1px solid;border-radius:15px;display:flex;justify-content:center;align-items: center;">Go to Home</button></a>
+    </div>
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
